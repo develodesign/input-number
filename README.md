@@ -12,14 +12,19 @@ Then add the script and jQuery to your page.
 // Default options, feel free to override them.
 var options = {
 
-  className: 'develo-quantity-helper',
-  buttonClassName: 'button',
+	// Style customisations
+	className: 'develo-quantity-helper',
+	buttonClassName: 'button',
+	
+	// Min and max
 	max: null,
 	min: null,
+	
+	// Plus and minus buttons. Supports html
 	minusHtml: '-',
 	plusHtml: '+',
 
-  // Callbacks
+	// Callbacks
 	onDecreased: function( value ){},
 	onIncreased: function( value ){}
 };
