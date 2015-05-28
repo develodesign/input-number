@@ -20,6 +20,7 @@
 
 			className: 'develo-quantity-helper',
 			buttonClassName: 'button',
+			disabledClassName: 'disabled',
 			max: null,
 			min: null,
 			minusHtml: '-',
@@ -48,7 +49,8 @@
 		this.$minus = $( '<a href="#"/>' )
 			.data( 'action', 'decrease' )
 			.html( this.options.minusHtml )
-			.addClass( this.options.buttonClassName );
+			.addClass( this.options.buttonClassName )
+			.addClass( this.options.disabledClassName );
 
 		this.$plus = $( '<a href="#"/>' )
 			.data( 'action', 'increase' )
@@ -118,11 +120,19 @@
 	 */
 	Input.prototype.set = function( value ){
 
-		if( this.options.min != null && value < this.options.min )
+		if( this.options.min != null && value <= this.options.min ) {
 			value = this.options.min;
+			this.$minus.addClass(this.options.disabledClassName);
+		} else {
+			this.$minus.removeClass(this.options.disabledClassName);
+		}
 
-		if( this.options.max && value > this.options.max )
+		if( this.options.max && value > this.options.max ) {
 			value = this.options.max;
+			this.$plus.addClass(this.options.disabledClassName);
+		} else {
+			this.$plus.removeClass(this.options.disabledClassName);
+		}
 
 		this.$input.val( value );
 		this.$input.trigger( 'change' );
