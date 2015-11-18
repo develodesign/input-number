@@ -1,9 +1,10 @@
 {
   "name": "input-number",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "homepage": "https://github.com/develodesign/input-number",
   "authors": [
-    "Paul Bill <paul@develodesign.co.uk>"
+    "Paul Bill <paul@develodesign.co.uk>",
+    "Mike Sheward <mike@develodesign.co.uk>"
   ],
   "description": "Simple jQuery plugin that adds buttons either side of the input to increase and decrease the quantity",
   "main": "develo-input-number.js",
