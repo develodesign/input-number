@@ -27,7 +27,8 @@
 			plusHtml: '+',
 
 			onDecreased: function( value ){},
-			onIncreased: function( value ){}
+			onIncreased: function( value ){},
+			getInput: $el
 
 		}, options );
 
